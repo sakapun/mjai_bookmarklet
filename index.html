@@ -22,7 +22,7 @@
 <a id="savebtn2"
    class="btn btn-success"
    rel="sidebar"
-   href='javascript:(function showMissOnly() {const grade = Number.parseInt(window.prompt("一致度順位がこの順位より悪い時", "2"));const threshold = grade >= 3 ? 100 : Number.parseInt(window.prompt("２位の場合のしきい値", "70"));const turnList = document.querySelectorAll("details.collapse");for (const turn of turnList) {const turnInfo = turn.querySelector(".turn-info");if (turnInfo !== null) {const orderLoss = turnInfo.querySelector(".order-loss");const firstScore = Number.parseFloat(turn.querySelector("details>table>tbody>tr>td:nth-child(3)>span").title);if (orderLoss && (Number.parseInt(orderLoss.textContent.replace(" #", "")) >= grade || firstScore >= threshold)) {turn.setAttribute("open", "");} else {turn.removeAttribute("open");}}})();'>
+   href='javascript:(function showMissOnly() {const grade = Number.parseInt(window.prompt("一致度順位がこの順位より悪い時", "2"));const threshold = grade >= 3 ? 100 : Number.parseInt(window.prompt("２位の場合のしきい値", "70"));const turnList = document.querySelectorAll("details.collapse");for (const turn of turnList) {const turnInfo = turn.querySelector(".turn-info");if (turnInfo !== null) {const orderLoss = turnInfo.querySelector(".order-loss");const firstScore = Number.parseFloat(turn.querySelector("details>table>tbody>tr>td:nth-child(3)>span").title);if (orderLoss && (Number.parseInt(orderLoss.textContent.replace(" #", "")) >= grade || firstScore >= threshold)) {turn.setAttribute("open", "");} else {turn.removeAttribute("open");}}}})();)'>
     麻雀AI Mortal便利ブックマークレット
 </a>
 
