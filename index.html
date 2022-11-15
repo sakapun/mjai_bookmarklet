@@ -37,15 +37,29 @@
     <div>
         <h3>Android</h3>
         <ol>
-            <li>Chromeにて、この<button id="chromeSave">保存リンク</button>を押してブックマークに追加する</li>
-            <li>レビュアー上で実行</li>
+            <li>
+                ボタンを押してコードをコピー<br />
+                <div class="d-flex">
+                    <button type="button" class="btn btn-info col-2" onclick="omakeCopyToClipboard()" data-toggle="tooltip" data-placement="top" title="コピーする">
+                        コピーする
+                    </button>
+                    <input class="border border-info rounded text-secondary form-control-plaintext" id="omakeCopyTarget" type="text"
+                           value='javascript:(function showMissOnly() {    const gradeThreshold = Number.parseInt(window.prompt("一致度順位がこの順位より悪い時", "2"));    const firstThreshold = gradeThreshold >= 3 ? 100 : Number.parseInt(window.prompt("２位の場合のしきい値", "70"));    const turnList = document.querySelectorAll("details.collapse");    for (const turn of turnList) {        const turnInfo = turn.querySelector(".turn-info");        if (turnInfo !== null) {            const orderLoss = turnInfo.querySelector(".order-loss");            const firstScore = Number.parseFloat(turn.querySelector("details>table>tbody>tr>td:nth-child(3)>span").title);            const yourGrade = orderLoss ? Number.parseInt(orderLoss.textContent.replace(" #", "")) : 1;            if (gradeThreshold === 2 && yourGrade === 2 && firstScore >= firstThreshold ) {                turn.setAttribute("open", "");            } else if (yourGrade !== 2 && gradeThreshold <= yourGrade) {                turn.setAttribute("open", "");            } else {                turn.removeAttribute("open");            }        }    }})();'
+                           readonly>
+                </div>
+            </li>
+            <li>コピーした文字をブックマークのURLとして保存</li>
+            <li>URLバーからブックマークタイトルを検索して実行</li>
+
         </ol>
-    </div>
-    <div>
-        <h3>iOS</h3>
-        <p></p>
     </div>
 
 </div>
+<script>
+    function omakeCopyToClipboard() {
+        const text = document.getElementById("omakeCopyTarget").value;
+        navigator.clipboard.writeText(text)
+    }
+</script>
 </body>
 </html>
