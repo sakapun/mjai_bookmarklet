@@ -1,0 +1,22 @@
+{
+  "name": "mjai_bookmarklet",
+  "version": "1.0.0",
+  "description": "https://sakapun.github.io/mjai_bookmarklet/",
+  "main": "index.html",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sakapun/mjai_bookmarklet.git"
+  },
+  "author": "sakapun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sakapun/mjai_bookmarklet/issues"
+  },
+  "homepage": "https://github.com/sakapun/mjai_bookmarklet#readme"
+}
