@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>モー便｜麻雀AIレビューアー（モータル）の結果をフィルターする便利ツール</title>
+    <title>これでよか？モー便｜麻雀AIレビューアー（モータル）の結果をフィルターする便利ツール</title>
     <style>
 
     </style>
@@ -28,7 +28,7 @@
                     <a id="savebtn2"
                        class="btn btn-success"
                        rel="sidebar"
-                       href='javascript:(function showMissOnly() {    const gradeThreshold = Number.parseInt(window.prompt("一致度順位がこの順位より悪い時", "2"));    const firstThreshold = gradeThreshold >= 3 ? 100 : Number.parseInt(window.prompt("２位の場合のしきい値", "70"));    const turnList = document.querySelectorAll("details.collapse");    for (const turn of turnList) {        const turnInfo = turn.querySelector(".turn-info");        if (turnInfo !== null) {            const orderLoss = turnInfo.querySelector(".order-loss");            const firstScore = Number.parseFloat(turn.querySelector("details>table>tbody>tr>td:nth-child(3)>span").title);            const yourGrade = orderLoss ? Number.parseInt(orderLoss.textContent.replace(" #", "")) : 1;            if (gradeThreshold === 2 && yourGrade === 2 && firstScore >= firstThreshold ) {                turn.setAttribute("open", "");            } else if (yourGrade !== 2 && gradeThreshold <= yourGrade) {                turn.setAttribute("open", "");            } else {                turn.removeAttribute("open");            }        }    }})();'>
+                       href='{{be_replaced}}'>
                         モー便1
                     </a>
                 </div>
@@ -50,7 +50,7 @@
                         コピーする
                     </button>
                     <input class="border border-info text-secondary form-control-plaintext w-auto ms-1" id="omakeCopyTarget" type="text"
-                           value='javascript:(function showMissOnly() {    const gradeThreshold = Number.parseInt(window.prompt("一致度順位がこの順位より悪い時", "2"));    const firstThreshold = gradeThreshold >= 3 ? 100 : Number.parseInt(window.prompt("２位の場合のしきい値", "70"));    const turnList = document.querySelectorAll("details.collapse");    for (const turn of turnList) {        const turnInfo = turn.querySelector(".turn-info");        if (turnInfo !== null) {            const orderLoss = turnInfo.querySelector(".order-loss");            const firstScore = Number.parseFloat(turn.querySelector("details>table>tbody>tr>td:nth-child(3)>span").title);            const yourGrade = orderLoss ? Number.parseInt(orderLoss.textContent.replace(" #", "")) : 1;            if (gradeThreshold === 2 && yourGrade === 2 && firstScore >= firstThreshold ) {                turn.setAttribute("open", "");            } else if (yourGrade !== 2 && gradeThreshold <= yourGrade) {                turn.setAttribute("open", "");            } else {                turn.removeAttribute("open");            }        }    }})();'
+                           value='{{be_replaced}}'
                            readonly>
                 </div>
             </li>

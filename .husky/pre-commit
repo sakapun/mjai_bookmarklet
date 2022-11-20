@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+cp ./src/*.gif ./docs/
+
+# 改行空白を撤去
+MOJI=`sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/ /g' src/function.js | sed -e "s/ //g"`
+MOJI=$MOJI ~/.anyenv/envs/nodenv/shims/node .husky/replace_script.js
+
+git add ./docs/*
+git add ./docs/index.html
